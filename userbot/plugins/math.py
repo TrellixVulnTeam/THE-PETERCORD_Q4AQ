@@ -5,7 +5,7 @@
 # NOW IN PETERCORDBOT
 import math
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 from userbot import CmdHelp
 from userbot import bot as PETERCORDBOT
