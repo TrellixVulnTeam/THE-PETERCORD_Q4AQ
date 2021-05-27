@@ -16,12 +16,13 @@
 
 
 echo """
-
-
-
-
-                       𝓛𝓔𝓖𝓔𝓝𝓓𝓐𝓡𝓨 𝓐𝓕 PETERCORD !!
-                                          @TEAMSquadUserbotSupport
+                      © 𝙻𝙴𝙶𝙴𝙽𝙳𝙰𝚁𝚈_𝙰𝙵_PETERCORDBOT™
+                          ╔═╦═╦══╦══╦══╦══╦══╦═╦══
+                          ║║║║╔╗║╦╩║║╣╔╗║╔╗║║╠╗╔
+                          ║║║║╠╣PETERCORD╔║║╣BOT║╔╗║║║║║
+                          ╚╩═╩╩╝╚╩─╚══╩╝╚╩══╩═╝╚
+                     © 𝙻𝙴𝙶𝙴𝙽𝙳𝙰𝚁𝚈_𝙰𝙵_PETECORDBOT™                       
+                         @TEAMSquadUserbotSupport
 """
 
 python3 -m userbot
