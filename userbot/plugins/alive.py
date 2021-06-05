@@ -39,7 +39,7 @@ file3 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 pm_caption = "  __**🎖PETERCORD ALIVE🎖**__\n\n"
 
 pm_caption += (
-    f"                 🎖PENGGUNA🎖\n**  『🎖[{DEFAULTUSER}](tg://user?id={PETERCORD})🎖』**\n\n"
+    f"                 🎖PENGGUNA🎖\n**  🎖[{DEFAULTUSER}](tg://user?id={PETERCORD})🎖**\n\n"
 )
 
 pm_caption += "TELETHON : `1.15.0` \n\n"
@@ -52,9 +52,9 @@ pm_caption += "GRUP SUPPORT: [ᴊᴏɪɴ](https://t.me/TEAMSquadUserbotSupport)\
 
 pm_caption += "OWNERS  : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n\n"
 
-pm_caption += "SUPPORT    :[ⓃⒾⓈⒽⓊ](https://t.me/TEAMSquadUserbotSupport)\n\n"
+pm_caption += "SUPPORT    :[𝗚𝗥𝗨𝗣](https://t.me/TEAMSquadUserbotSupport)\n\n"
 
-pm_caption += "      [𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🔹 [OWNER](https://t.me/diemmmmmmmmmm)"
+pm_caption += "      [𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🎖 [OWNER](https://t.me/diemmmmmmmmmm)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
