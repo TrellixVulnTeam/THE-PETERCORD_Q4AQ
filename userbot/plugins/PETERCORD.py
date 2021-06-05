@@ -65,7 +65,7 @@ async def amireallyalive(alive):
         PETERCORD_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
         PETERCORD_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
         PETERCORD_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
-        PETERCORD_caption += f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :**`{PETERCORDversion}`\n"
+        PETERCORD_caption += f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :**`{PETERCORDversion}`\n"
         PETERCORD_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
         PETERCORD_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
         await alive.client.send_file(
