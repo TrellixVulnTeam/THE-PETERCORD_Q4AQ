@@ -54,7 +54,7 @@ pm_caption += "OWNERS  : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n\n"
 
 pm_caption += "SUPPORT    :[ⓃⒾⓈⒽⓊ](https://t.me/TEAMSquadUserbotSupport)\n\n"
 
-pm_caption += "      [𝗥𝗘𝗣𝗢](https://github.com/ilham77mansiz/-PETERCORD-) 🔹 [OWNER](https://t.me/diemmmmmmmmmm)"
+pm_caption += "      [𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🔹 [OWNER](https://t.me/diemmmmmmmmmm)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
