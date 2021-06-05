@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{PETERCORD_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"🎖 " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -58,7 +58,7 @@ def button(page, modules):
                f"◀", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"{PETERCORD_emoji} 𝗖𝗟𝗢𝗦𝗘 {PETERCORD_emoji}•", data="close"
+               f"𝗖𝗟𝗢𝗦𝗘", data="close"
             ),
             custom.Button.inline(
                f"▶", data=f"page({0 if page == (max_pages - 1) else page + 1})"
@@ -80,7 +80,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**Running PETERCORDBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**{PETERCORD_emoji}\n\n MULAI PETERCORDBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -127,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
+            f"**{PETERCORD_emoji}\n\nREPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
