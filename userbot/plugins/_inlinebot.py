@@ -84,7 +84,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                      f"**┏━━━━━━━━━━━━━━━━━━━\n", 
                      f"**┗━━━━━━━━━━━━━━━━━━━\n\n",
                      f"** REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
-            buttons=veriler[1],,
                 buttons=veriler[1],
                 link_preview=False,
             )
