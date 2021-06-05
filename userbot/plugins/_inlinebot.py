@@ -79,9 +79,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
-                f"Hey! Only use .help please",
-                text=f"** MULAI PETERCORDBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
-                logo = "https://imgur.com/gallery/ieSTXbM",
+                f"Hey! Cara melihat .help name module",
+                text=f"**((((((PETERCORD USERBOT))))\n",
+                     f"**┏━━━━━━━━━━━━━━━━━━━\n", 
+                     f"**┗━━━━━━━━━━━━━━━━━━━\n\n",
+                     f"** REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
+            buttons=veriler[1],,
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -128,8 +131,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
-            logo = "https://imgur.com/gallery/ieSTXbM",
+            f"**((((((PETERCORD USERBOT))))\n",
+            f"**┏━━━━━━━━━━━━━━━━━━━\n", 
+            f"**┗━━━━━━━━━━━━━━━━━━━\n\n",
+            f"** REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
