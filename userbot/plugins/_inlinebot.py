@@ -128,7 +128,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         veriler = button(page, CMD_HELP)
         await event.edit(
             f"**REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
-            thumb_url={PETERCORD_emoji},
+            thumb_url="{PETERCORD_emoji}",
             buttons=veriler[1],
             link_preview=False,
         )
