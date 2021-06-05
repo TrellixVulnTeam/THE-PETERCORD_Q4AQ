@@ -55,13 +55,13 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏴᎪᏟᏦ {PETERCORD_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"◀", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{PETERCORD_emoji} ❌ {PETERCORD_emoji}•", data="close"
+               f"{PETERCORD_emoji} 𝗖𝗟𝗢𝗦𝗘 {PETERCORD_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{PETERCORD_emoji} ΝᎬХͲ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"▶", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
@@ -127,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**REPO PETERCORD PLUGINS** [PETERCORDBOT](https://t.me/TEAMSquadUserbotSupport) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -168,9 +168,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
 
         buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
-        buttons.append([custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"page({page})")])
+        buttons.append([custom.Button.inline("◀", data=f"page({page})")])
         await event.edit(
-            f"**🎖 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
+            f"**⚡ File:** `{commands}`\n**⚡ Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
             buttons=buttons,
             link_preview=False,
         )
@@ -190,7 +190,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(2).decode("UTF-8"))
         commands = event.data_match.group(3).decode("UTF-8")
 
-        result = f"**📗 File:** `{cmd}`\n"
+        result = f"**⚡ File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
@@ -218,7 +218,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit(
             result,
             buttons=[
-                custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"Information[{page}]({cmd})")
+                custom.Button.inline("◀", data=f"Information[{page}]({cmd})")
             ],
             link_preview=False,
         )
