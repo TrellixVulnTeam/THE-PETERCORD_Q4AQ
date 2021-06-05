@@ -366,6 +366,22 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 40])
 
+@bot.on(admin_cmd(pattern=f"repo$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"repo$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 0.1
+    animation_ttl = range(0, 36)
+    await edit_or_reply(event, "REPO PETERCORD")
+    animation_chars = [
+        "REPO PETERCORD",
+        "**╭┄┅┯┅┄┄┅┯┅┄╮**\n\n [𝗣 𝗘 𝗧 𝗘 𝗥 𝗖 𝗢 𝗥 𝗗](https://github.com/ilham77mansiz/-PETERCORD-)\n\n [𝗢 𝗪 𝗡 𝗘 𝗥 𝗦](t.me/diemmmmmmmmmm)\n\n [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport)\n\n**╰┄┅┷┅┄┄┅┷┅┄╯**\n",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 18])
+
 
 @bot.on(admin_cmd(pattern=f"charging$"))
 @bot.on(sudo_cmd(pattern=f"charging$", allow_sudo=True))
