@@ -81,7 +81,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result = await builder.article(
                 f"Hey! Only use .help please",
                 text=f"** MULAI PETERCORDBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
-                thumb_url="https://imgur.com/gallery/ieSTXbM",
+                logo = "https://imgur.com/gallery/ieSTXbM",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -129,7 +129,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         veriler = button(page, CMD_HELP)
         await event.edit(
             f"**REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) __BERJALAN__\n\n**JUMLAH MODULE TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
-            thumb_url="https://imgur.com/gallery/ieSTXbM",
+            logo = "https://imgur.com/gallery/ieSTXbM",
             buttons=veriler[1],
             link_preview=False,
         )
