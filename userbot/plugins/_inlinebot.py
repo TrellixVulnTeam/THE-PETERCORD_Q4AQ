@@ -79,11 +79,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
-                f"Hey! Cara melihat .help name module",
-                text=f"**((((((PETERCORD USERBOT))))\n",
-                     f"**┏━━━━━━━━━━━━━━━━━━━\n", 
-                     f"**┗━━━━━━━━━━━━━━━━━━━\n\n",
-                     f"** REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
+                f"Hey! Only use .help please",
+                text=f"**MULAI PETERCORD**\n\n JUMLAH PLUGIN DATA :`{len(CMD_HELP)}`\n**HALAMAN:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
