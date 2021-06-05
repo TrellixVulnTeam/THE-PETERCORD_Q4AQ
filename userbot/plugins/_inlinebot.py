@@ -127,10 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**((((((PETERCORD USERBOT))))\n",
-            f"**┏━━━━━━━━━━━━━━━━━━━\n", 
-            f"**┗━━━━━━━━━━━━━━━━━━━\n\n",
-            f"** REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
+            f"**((((((PETERCORD USERBOT)))\n\n┏━━━━━━━━━━━━━━━━━━━\n ┗━━━━━━━━━━━━━━━━━━━ \n\n REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
