@@ -5,8 +5,8 @@ from userbot import CMD_HELP
 from PETERCORDBOT.utils import *
 
 
-@bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="perintah(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="perintah(?: |$)(.*)", allow_sudo=True))
 async def PETERCORDBOTt(event):
     if event.fwd_from:
         return
@@ -25,7 +25,7 @@ async def PETERCORDBOTt(event):
         ]
 
         for i in sayfa:
-            string += f"`▶️ `"
+            string += f"`↪ `"
             for sira, a in enumerate(i):
                 string += "`" + str(a)
                 if sira == i.index(i[-1]):
