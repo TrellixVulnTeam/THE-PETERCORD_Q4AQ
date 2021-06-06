@@ -16,7 +16,7 @@ from datetime import datetime
 from gtts import gTTS
 from userbot import CMD_HELP
 from PETERCORDBOT.utils import admin_cmd
-
+from userbot.cmdhelp import CmdHelp
 
 
 
