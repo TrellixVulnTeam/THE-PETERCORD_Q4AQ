@@ -44,7 +44,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         PETERCORDBOT = await borg.send_message(
             event.chat_id,
-            "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+            "⚡__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
             + total_afk_time
             + "`", file=PETERCORDpic
         )
@@ -52,7 +52,7 @@ async def set_not_afk(event):
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 "#AFKFALSE \nSet AFK mode to False\n"
-                + "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+                + "⚡__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
                 + total_afk_time
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -96,10 +96,10 @@ async def on_afk(event):
         msg = None
         
         message_to_reply = (
-            f"Hey!! My Legend master [{DEFAULTUSER}](tg://user?id={PETERCORD}) is currently offline... Since when?\n**For** `{total_afk_time}`\n"
-            + f"\n\n👇__The Reason Is__👇 :-\n`{reason}`"
+            f"Hey, Pengguna PETERCORD  [{DEFAULTUSER}](tg://user?id={PETERCORD}) Telah  offline... Sejak ..\n**Terakhir dilihat** `{total_afk_time}`\n"
+            + f"\n\n⚡__Alasan saya__⚡ :-\n`{reason}`"
   if reason
-            else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
+            else f"**Heyy!**\n__Saat ini saya tidak hadir.__\n__Tunggulah, sampai dia hadir Dari__ `{total_afk_time}`\nSaya akan kembali ketika saya merasa datang."
         )
         msg = await event.reply(message_to_reply, file=PETERCORDpic)
         await asyncio.sleep(2)
