@@ -140,7 +140,7 @@ async def _(event):
                 event.chat_id, f"__**SAYA  Off**__ \n⚡ ALASAN `{reason}`", file=PETERCORDpic
             )
         else:
-            await borg.send_message(event.chat_id, f"**I am Going afk!**🚶", file=PETERCORDpic)
+            await borg.send_message(event.chat_id, f"**Saya Afk sekarang!**⚡", file=PETERCORDpic)
         await asyncio.sleep(0.001)
         await event.delete()
         try:
