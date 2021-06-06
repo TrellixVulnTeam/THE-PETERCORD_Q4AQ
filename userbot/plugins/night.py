@@ -19,7 +19,7 @@ night_time = None
 last_night_message = {}
 
 DEFAULTUSER = (
-    str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+    str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 )
 
 
@@ -40,7 +40,7 @@ async def set_not_night(event):
                 event.chat_id,
                 "Please set `PLUGIN_CHANNEL` "
                 + "for the proper functioning of night functionality "
-                + "report in [REBELBOT](t.me/REBELBOT_SUPPORT)\n\n `{}`".format(str(e)),
+                + "report in [PETERCORD](https://t.me/TEAMSquadUserbotSupport)\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )
@@ -132,7 +132,7 @@ async def on_night(event):
             f"My Master Has Been Gone For {night_since}\nWhere He Is: **On Bed Sleeping** "
             + f"\n\n__ I'll back in a few Light years__\n**"
             if reason
-            else f"**Important Notice**\n\n{DEFAULTUSER} Is Sleeping DND And Also Good [night To You...](https://telegra.ph/file/3e6d2fb965f293e3680ff.jpg) "
+            else f"**Important Notice**\n\n{DEFAULTUSER} Is Sleeping DND And Also Good [night To You...](https://telegra.ph/file/2d2a335d26a0d33a1e385.jpg) "
         )
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
