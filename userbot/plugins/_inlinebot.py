@@ -80,7 +80,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**MULAI PETERCORD**\n\n JUMLAH PLUGIN DATA :`{len(CMD_HELP)}`\n**HALAMAN:** 1/{veriler[0]}",
+                text=f"**𝐌𝐔𝐋𝐀𝐈 𝐏𝐄𝐓𝐄𝐑𝐂𝐎𝐑𝐃**\n\n 𝐉𝐔𝐌𝐋𝐀𝐇 𝐏𝐋𝐔𝐆𝐈𝐍𝐒 𝐓𝐄𝐑𝐒𝐄𝐃𝐈𝐀 :`{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -127,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**((((((PETERCORD USERBOT))))))\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n REPO PETERCORD PLUGINS** [PETERCORDBOT SUPPORT](https://t.me/TEAMSquadUserbotSupport) BERJALAN\n\n**JUMLAH PLUGIN TERSEDIA :** `{len(CMD_HELP)}`\n**HALAMAN:** {page + 1}/{veriler[0]}",
+            f"**((((((𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧))))))\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n 𝐑𝐄𝐏𝐎 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦** [𝗦𝗨𝗣𝗣𝗢𝗥𝗧](https://t.me/TEAMSquadUserbotSupport) 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡\n\n**𝗝𝗨𝗠𝗟𝗔𝗛 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗧𝗘𝗥𝗦𝗘𝗗𝗜𝗔 :** `{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -158,7 +158,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    "🎖 " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    "⚡ " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
@@ -193,21 +193,21 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         result = f"**⚡ File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+                result += f"**🔹 Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**❌ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                result += f"**🔹 Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
-            result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+            result += f"**🔹 Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
-            result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+                result += f"**❌ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+            result += f"**ℹ🎖 Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
         command = CMD_HELP_BOT[cmd]["commands"][commands]
         if command["params"] is None:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
+            result += f"**↪ Commands:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
         else:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+            result += f"**↪ Commands:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
 
         if command["example"] is None:
             result += f"**💬 Explanation:** `{command['usage']}`\n\n"
