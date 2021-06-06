@@ -36,21 +36,21 @@ file1 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 file2 = "https://telegra.ph/file/e4142fc1d14bc3c8181a3.jpg"
 file3 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 """ =======================CONSTANTS====================== """
-pm_caption = "  __**🎖PETERCORD ALIVE🎖**__\n\n"
+pm_caption = "🎖PETERCORD ALIVE🎖\n\n"
 
 pm_caption += (
-    f"       🎖PENGGUNA : [{DEFAULTUSER}](tg://user?id={PETERCORD})**\n\n"
+    f" 🎖PENGGUNA : [{DEFAULTUSER}](tg://user?id={PETERCORD})\n\n"
 )
 
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 
 pm_caption += f"┣|TELETHON : `1.15.0` \n\n"
 
-pm_caption += f"┣|PETERCORD: `{PETERCORDversion}`\n"
+pm_caption += f"┣|CODEBOT : `{PETERCORDversion}`\n"
 
-pm_caption += f"┣|SUDO     : `{sudou}`\n"
+pm_caption += f"┣|SUDO       : `{sudou}`\n"
 
-pm_caption += f"┣|VERSION  : `PETERCORD.V20`\n"
+pm_caption += f"┣|VERSION   : `PETERCORD.V20`\n"
 
 pm_caption += f"┣|OWNERS   : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n"
 
@@ -60,7 +60,7 @@ pm_caption += f"┗━━━━━━━━━━━━━━━━━━━ \n\
 
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━ \n"
 
-pm_caption += f"┣|[𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🎖 [OWNER](https://t.me/diemmmmmmmmmm)"
+pm_caption += f"┣|[𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🎖 [OWNER](https://t.me/diemmmmmmmmmm)\n"
 
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━ \n"
 
