@@ -147,8 +147,8 @@ import asyncio
 from PETERCORDBOT.utils import admin_cmd
 
 
-@bot.on(admin_cmd(pattern=f"lovestory", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"lovestory", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"kisahcinta", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"kisahcinta", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -486,5 +486,5 @@ CmdHelp("animoji").add_command(
 ).add_command(
   'fuck', None, 'Tapa tap tapa tap'
 ).add_command(
-  'lovestory', None, 'A true love story😃'
+  'kisahcinta', None,'Kisah cintaku😃'
 ).add()
