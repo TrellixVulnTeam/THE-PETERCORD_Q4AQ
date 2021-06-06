@@ -63,8 +63,8 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@bot.on(admin_cmd(pattern="savefilter (.*)"))
-@bot.on(sudo_cmd(pattern="savefilter (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="filter (.*)"))
+@bot.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -98,8 +98,8 @@ async def on_snip_save(event):
         )
         
 
-@bot.on(admin_cmd(pattern="listfilter$"))
-@bot.on(sudo_cmd(pattern="listfilter$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="daftarfilter$"))
+@bot.on(sudo_cmd(pattern="daftarfilter$", allow_sudo=True))
 async def on_snip_list(event):
     if event.fwd_from:
         return
@@ -145,9 +145,9 @@ async def on_all_snip_delete(event):
     await edit_or_reply(event, f"All the Filters **in current chat** deleted successfully")
     
 CmdHelp("filters").add_command(
-  'savefilter', 'reply to a msg with keyword', 'Saves the replied msg as a reply to keyword. The bot will reply that msg wheneverthe keyword is mentioned.'
+  'filter', 'reply to a msg with keyword', 'Saves the replied msg as a reply to keyword. The bot will reply that msg wheneverthe keyword is mentioned.'
 ).add_command(
-  'listfilter', None, 'Lists all the filters in chat'
+  'daftarfilter', None, 'Lists all the filters in chat'
 ).add_command(
   'clearallfilters', None, 'Deletes all the filter saved in a chat.'
 ).add_command(
