@@ -28,7 +28,7 @@ async def _(event):
         event.chat_id, "CAADAQADRwADnjOcH98isYD5RJTwAg"
     )
     text2 = await event.reply(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** I have to call discussion😯"
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Saya sedang berdiskusi sekarang"
     )
     await asyncio.sleep(3)
     await stcr1.delete()
@@ -37,7 +37,7 @@ async def _(event):
         event.chat_id, "CAADAQADRgADnjOcH9odHIXtfgmvAg"
     )
     text3 = await event.reply(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** We have to eject the imposter or will lose😥 "
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Kita harus mengeluarkan penipu itu atau akan kalah :) "
     )
     await asyncio.sleep(3)
     await stcr2.delete()
@@ -45,22 +45,22 @@ async def _(event):
     stcr3 = await event.client.send_file(
         event.chat_id, "CAADAQADOwADnjOcH77v3Ap51R7gAg"
     )
-    text4 = await event.reply(f"**Others :** Where???🤨 ")
+    text4 = await event.reply(f"**Lainnya :** Dimana Astaga hiks ")
     await asyncio.sleep(2)
-    await text4.edit(f"**Others :** Who??🤔 ")
+    await text4.edit(f"**Lainnya :** Siapa itu? ")
     await asyncio.sleep(2)
     await text4.edit(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** Its {name} , I saw {name}  using🤨 vent,"
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Ok {name} , Kita bantai nanti {name}  Aku pukul kepalanya,"
     )
     await asyncio.sleep(3)
-    await text4.edit(f"**Others :**Okay.. 😲Vote {name} ")
+    await text4.edit(f"**Lainnya kita tebas :**Okay.. setuju gak? {name} ")
     await asyncio.sleep(2)
     await stcr3.delete()
     await text4.delete()
     stcr4 = await event.client.send_file(
         event.chat_id, "CAADAQADLwADnjOcH-wxu-ehy6NRAg"
     )
-    PETERCORDevent = await event.reply(f"{name} is ejected.......🤐")
+    PETERCORDevent = await event.reply(f"{name} Gamau ya yaudah aku diam aja hiks.......🤐")
     await asyncio.sleep(2)
     await PETERCORDevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
@@ -85,14 +85,14 @@ async def _(event):
     await stcr4.delete()
     if cmd == "":
         await PETERCORDevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} Dia menggila.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Makin menggila    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
         await PETERCORDevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADLQADnjOcH39IqwyR6Q_0Ag")
     elif cmd == "n":
         await PETERCORDevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} Dia mulai sange wkwk.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Beneran dia sange tapi gada cewek yang mau dimainin hiks selesai   　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
         await PETERCORDevent.delete()
@@ -130,11 +130,11 @@ async def _(event):
     await asyncio.sleep(0.2)
     if cmd == "":
         await PETERCORDevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} ini orang  sangeean.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Penjahat kelamin   　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
     elif cmd == "n":
         await PETERCORDevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} sangean hati2 kalian buat para cewek.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Penjahat kelamin   　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
 
 
