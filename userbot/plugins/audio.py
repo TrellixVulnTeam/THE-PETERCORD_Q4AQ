@@ -144,11 +144,6 @@ async def _(event):
         await event.edit(str(e))
 
 
-CMD_HELP.update(
-    {
-        "audio": ".audio <language code> "
-        "\nUsage: reply any msg with .audio (language code) example .audio en / .audio hi\n\n"
-        ".audio <language code> | <msg> "
-        "\nUsage: convert text to Audio example .audio en|msg (note:- this | mark is important.\n\n"
-    }
-)
+CmdHelp("audio").add_command(
+  'audio', 'language code', 'text to speak'
+).add()
