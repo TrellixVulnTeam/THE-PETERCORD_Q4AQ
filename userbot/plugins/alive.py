@@ -39,22 +39,22 @@ file3 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 pm_caption = "🎖PETERCORD ALIVE🎖\n\n"
 
 pm_caption += (
-    f" 🎖PENGGUNA : [{DEFAULTUSER}](tg://user?id={PETERCORD})\n\n"
+    f" 🎖𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 : [{DEFAULTUSER}](tg://user?id={PETERCORD})\n\n"
 )
 
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 
-pm_caption += f"┣|TELETHON : `1.15.0` \n\n"
+pm_caption += f"┣|𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 : `1.15.0` \n\n"
 
-pm_caption += f"┣|CODEBOT : `{PETERCORDversion}`\n"
+pm_caption += f"┣|𝗖𝗢𝗗𝗘𝗕𝗢𝗧 : `{PETERCORDversion}`\n"
 
-pm_caption += f"┣|SUDO       : `{sudou}`\n"
+pm_caption += f"┣|𝗦𝗨𝗗𝗢       : `{sudou}`\n"
 
-pm_caption += f"┣|VERSION   : `PETERCORD.V20`\n"
+pm_caption += f"┣|𝗩𝗘𝗥𝗦𝗜𝗢𝗡   : `PETERCORD.V20`\n"
 
-pm_caption += f"┣|OWNERS   : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n"
+pm_caption += f"┣|𝗢𝗪𝗡𝗘𝗥𝗦   : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n"
 
-pm_caption += f"┣|SUPPORT  :[𝗚𝗥𝗨𝗣](https://t.me/TEAMSquadUserbotSupport)\n\n"
+pm_caption += f"┣|𝗦𝗨𝗣𝗣𝗢𝗥𝗧  : [KLIK DISINI](https://t.me/TEAMSquadUserbotSupport)\n\n"
 
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━ \n\n"
 
