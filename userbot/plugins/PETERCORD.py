@@ -68,25 +68,6 @@ async def amireallyalive(alive):
         PETERCORD_caption += f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :**`{PETERCORDversion}`\n"
         PETERCORD_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
         PETERCORD_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
-        PETERCORD_caption += f"BUTTON \n",
-                buttons=[
-                    [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/TEAMSquadUserbotSupport"),
-                        custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/TEAMSquadUserbotSupport"
-                        ),
-                    ],
-                    [
-                        custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/IlhamMansiez/PETERCORDBOT"),
-                        custom.Button.url
-                    (
-                            "🔰 TUTORIAL 🔰", ""
-                    )
-                    ],
-                ],
-                link_preview=False,
-
         await alive.client.send_file(
             alive.chat_id, PETERCORD_IMG, caption=PETERCORD_caption, reply_to=reply_to_id
         )
