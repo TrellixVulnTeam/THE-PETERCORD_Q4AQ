@@ -45,7 +45,7 @@ pm_caption += (
     f"                 ⚡𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔⚡\n  **👾[{DEFAULTUSER}](tg://user?id={PETERCORD})👾**\n\n"
 )
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
-pm_caption += f"┣•➳➠ `𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡:` `{version.__version__}` \n"
+pm_caption += f"┣•➳➠ `𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡:` `2-2-7` \n"
 pm_caption += f"┣•➳➠ `𝗩𝗘𝗥𝗦𝗜𝗢𝗡:` `{PETERCORDversion}`\n"
 pm_caption += f"┣•➳➠ `𝗦𝗨𝗗𝗢:` `{sudou}`\n"
 pm_caption += f"┣•➳➠ `𝗖𝗛𝗔𝗡𝗡𝗘𝗟:` [𝙿𝙴𝚃𝙴𝚁𝙲𝙾𝚁𝙳](https://t.me/TEAMSquadUserbotSupport)\n"
