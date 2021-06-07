@@ -15,7 +15,7 @@ async def reply_id(event):
 
 DEFAULTUSER = ALIVE_NAME or "PETERCORD User"
 PETERCORD_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝕃𝕖𝕘𝕖𝕟𝕕𝕒𝕣𝕪_𝔸𝔽_𝕄𝕒𝕗𝕚𝕒𝔹𝕠𝕥"
+CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝙿𝙴𝚃𝙴𝚁𝙲𝙾𝚁𝙳"
 
 USERID = bot.uid
 
@@ -64,7 +64,7 @@ async def amireallyalive(alive):
         PETERCORD_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         PETERCORD_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
         PETERCORD_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
-        PETERCORD_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
+        PETERCORD_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 :** `1.15.0`\n"
         PETERCORD_caption += f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :**`{PETERCORDversion}`\n"
         PETERCORD_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
         PETERCORD_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
@@ -78,7 +78,7 @@ async def amireallyalive(alive):
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
             f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
             f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
-            f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
+            f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 :** `1.15.0`\n"
             f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :** `{PETERCORDversion}`\n"
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
