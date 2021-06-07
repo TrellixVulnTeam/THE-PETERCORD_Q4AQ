@@ -210,10 +210,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result += f"**┏━━━━━━━━━━━━━━━━━━━**\n Commands: `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
 
         if command["example"] is None:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
         else:
             result += f"**┏━━━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━━━\n For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
 
         await event.edit(
             result,
