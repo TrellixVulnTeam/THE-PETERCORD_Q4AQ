@@ -170,7 +170,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
         buttons.append([custom.Button.inline("◀", data=f"page({page})")])
         await event.edit(
-            f"**┏━━━━━━━━━━━━━━━━━━━**\n File:** `{commands}`\n**┗━━━━━━━━━━━━━━━━━━━**\n\n**┏━━━━━━━━━━━━━━━━━━━**\n Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`\n┗━━━━━━━━━━━━━━━━━━━",
+            f"**┏━━━━━━━━━━━━━━━━━**\n File:** `{commands}`\n**┗━━━━━━━━━━━━━━━━━**\n\n**┏━━━━━━━━━━━━━━━━━**\n Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`\n┗━━━━━━━━━━━━━━━━━",
             buttons=buttons,
             link_preview=False,
         )
@@ -190,30 +190,30 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(2).decode("UTF-8"))
         commands = event.data_match.group(3).decode("UTF-8")
 
-        result = f"**┏━━━━━━━━━━━━━━━━━━━\n File:** `{cmd}`\n┗━━━━━━━━━━━━━━━━━━━\n\n"
+        result = f"**┏━━━━━━━━━━━━━━━━━\n File:** `{cmd}`\n┗━━━━━━━━━━━━━━━━━\n\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+                result += f"**┏━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━\n"
                 result += f"**❌ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
-                result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+                result += f"**┏━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━\n"
         else:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━\n"
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**❌ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ🎖 Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
         command = CMD_HELP_BOT[cmd]["commands"][commands]
         if command["params"] is None:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━**\n Commands: `{COMMAND_HAND_LER[:1]}{command['command']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━**\n Commands: `{COMMAND_HAND_LER[:1]}{command['command']}`\n┗━━━━━━━━━━━━━━━━━\n"
         else:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━**\n Commands: `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━**\n Commands: `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n┗━━━━━━━━━━━━━━━━━\n"
 
         if command["example"] is None:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━\n"
         else:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\n For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━\n Explanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━\n For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n┗━━━━━━━━━━━━━━━━━\n"
 
         await event.edit(
             result,
