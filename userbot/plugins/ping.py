@@ -20,7 +20,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"┏━━━━━━━━━━━━━━━━━━━\n__**꧁ PING ꧂__**\n\n   ⚘ ➳➠UPTIME: {ms}\n   ⚘ ➳➠ __**PENGGUNA**__: [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})\n┗━━━━━━━━━━━━━━━━━━━"
+        f"┏━━━━━━━━━━━━━━━━━━━\n__**꧁ PING ꧂__**\n\n   ⚘ ➳➠UPTIME: {ms}\n   ⚘ ➳➠__**PENGGUNA**__: [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})\n┗━━━━━━━━━━━━━━━━━━━"
     )
 
 
