@@ -190,15 +190,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(2).decode("UTF-8"))
         commands = event.data_match.group(3).decode("UTF-8")
 
-        result = f"**┏━━━━━━━━━━━━━━━━━━━File:** `{cmd}`\n┗━━━━━━━━━━━━━━━━━━━\n\n"
+        result = f"**┏━━━━━━━━━━━━━━━━━━━\nFile:** `{cmd}`\n┗━━━━━━━━━━━━━━━━━━━\n\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**┏━━━━━━━━━━━━━━━━━━━Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+                result += f"**┏━━━━━━━━━━━━━━━━━━━\nTerdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
                 result += f"**❌ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
-                result += f"**┏━━━━━━━━━━━━━━━━━━━Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n┗━━━━━━━━━━━━━━━━━━━\n"
+                result += f"**┏━━━━━━━━━━━━━━━━━━━\nTerdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n┗━━━━━━━━━━━━━━━━━━━\n"
         else:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━━━\nTerdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**❌ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ🎖 Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
@@ -210,7 +210,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result += f"**┏━━━━━━━━━━━━━━━━━━━**\nCommands: `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
 
         if command["example"] is None:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\nExplanation:** `{command['usage']}`\n\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━━━\nExplanation:** `{command['usage']}`\n\n┗━━━━━━━━━━━━━━━━━━━\n\n"
         else:
             result += f"**┏━━━━━━━━━━━━━━━━━━━\nExplanation:** `{command['usage']}`\n┗━━━━━━━━━━━━━━━━━━━\n"
             result += f"**┏━━━━━━━━━━━━━━━━━━━\nFor Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n┗━━━━━━━━━━━━━━━━━━━\n\n"
