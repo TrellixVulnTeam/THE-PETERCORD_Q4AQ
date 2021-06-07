@@ -8,8 +8,8 @@ from userbot import LOGS
 from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-@bot.on(admin_cmd(pattern="join$", outgoing=True))
-@bot.on(sudo_cmd(pattern="join$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ikut$", outgoing=True))
+@bot.on(sudo_cmd(pattern="ikut$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -210,7 +210,7 @@ async def _(event):
 
 
 CmdHelp("fun2").add_command(
-  "join", None, "Use and see"
+  "ikut", None, "Use and see"
 ).add_command(
   "bf", None, "Use and see"
 ).add_command(
