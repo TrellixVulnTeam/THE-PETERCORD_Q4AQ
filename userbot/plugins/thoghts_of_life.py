@@ -15,7 +15,7 @@ import sys
 
 import random
 
-
+from userbot.cmdhelp import CmdHelp
 
 from PETERCORDBOT.utils import admin_cmd
 
