@@ -52,7 +52,7 @@ pm_caption += f"┣•➳➠ `𝗖𝗛𝗔𝗡𝗡𝗘𝗟:` [𝙿𝙴𝚃𝙴�
 pm_caption += f"┣•➳➠ `𝗖𝗥𝗘𝗔𝗧𝗢𝗥:` [Ilham Mansiez](https://t.me/diemmmmmmmmmm)\n"
 pm_caption += f"┣•➳➠ `𝗦𝗨𝗣𝗣𝗢𝗥𝗧:` [PETERCORD](https://t.me/TEAMSquadUserbotSupport)\n"
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
-pm_caption += " [⚡REPO⚡](https://github.com/IlhamMansiez/PETERCORDBOT) 🔸 [📜License📜](https://github.com/IlhamMansiez/PETERCORDBOT/blob/main/LICENSE)"
+pm_caption += " [⚡REPO⚡](https://github.com/IlhamMansiez/PETERCORDBOT) 🔸 [📜License📜](https://github.com/IlhamMansiez/PETERCORDBOT/blob/master/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
