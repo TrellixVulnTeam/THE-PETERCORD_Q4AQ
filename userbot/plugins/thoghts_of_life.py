@@ -366,3 +366,6 @@ async def _(event):
         await event.edit("`\"If you're buying a home printer for occasional use, get a laser printer; they're more expensive up front but way more economical in the long run.\"`")
     if x==87:
         await event.edit("`\"Go for that run, no one is looking at you, don't overthink it, do it!\"`")
+CmdHelp("thoghts_of_life").add_command(
+  "tip", None, "Liat aja sendiri"
+).add()
