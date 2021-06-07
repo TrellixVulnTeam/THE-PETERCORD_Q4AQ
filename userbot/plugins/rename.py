@@ -184,7 +184,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     thumb=thumb,
-                    caption="reuploaded by [REBELBOT](https://t.me/REBELBOT_Chit_Chat)",
+                    caption="reuploaded by [PETERCORDBOT](https://t.me/@diemmmmmmmmmm)",
                     force_document=False,
                     allow_cache=False,
                     reply_to=event.message.id,
