@@ -82,8 +82,7 @@ async def amireallyalive(alive):
             f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :** `{PETERCORDversion}`\n"
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
-        )
-        ("@TEAMSquadUserbotSupport",
+            f"BUTTON \n",
                 text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
