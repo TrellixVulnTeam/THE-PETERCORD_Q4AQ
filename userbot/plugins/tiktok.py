@@ -10,6 +10,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from PETERCORDBOT.utils import admin_cmd
 from userbot import CMD_HELP 
+from userbot.cmdhelp import CmdHelp
 
 @borg.on(admin_cmd("tti ?(.*)"))
 async def _(event):
