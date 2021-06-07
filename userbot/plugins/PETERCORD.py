@@ -84,24 +84,24 @@ async def amireallyalive(alive):
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
         )
     elif event.text=='':
-              result = builder.article(
-                  "@TEAMSquadUserbotSupport",
-                  text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
-                  buttons=[
-                      [
-                          custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/TEAMSquadUserbotSupport"),
-                          custom.Button.url(
-                              "⚡ GROUP ⚡", "https://t.me/TEAMSquadUserbotSupport"
-                          ),
-                      ],
-                      [
-                          custom.Button.url(
-                              "✨ REPO ✨", "https://github.com/IlhamMansiez/PETERCORDBOT"),
-                          custom.Button.url
-                      (
-                              "🔰 TUTORIAL 🔰", ""
-                      )
-                      ],
-                  ],
-                  link_preview=False,
-              )
+            result = builder.article(
+                "@TEAMSquadUserbotSupport",
+                text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
+                buttons=[
+                    [
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/TEAMSquadUserbotSupport"),
+                        custom.Button.url(
+                            "⚡ GROUP ⚡", "https://t.me/TEAMSquadUserbotSupport"
+                        ),
+                    ],
+                    [
+                        custom.Button.url(
+                            "✨ REPO ✨", "https://github.com/IlhamMansiez/PETERCORDBOT"),
+                        custom.Button.url
+                    (
+                            "🔰 TUTORIAL 🔰", ""
+                    )
+                    ],
+                ],
+                link_preview=False,
+            )
