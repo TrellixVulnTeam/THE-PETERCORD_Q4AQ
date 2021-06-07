@@ -53,8 +53,8 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - StartTime))
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="petercord$"))
-@bot.on(sudo_cmd(pattern="petercord$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern="logo$"))
+@bot.on(sudo_cmd(pattern="logo$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
@@ -83,3 +83,25 @@ async def amireallyalive(alive):
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
         )
+   elif event.text=='':
+            result = builder.article(
+                "@TEAMSquadUserbotSupport",
+                text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
+                buttons=[
+                    [
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/TEAMSquadUserbotSupport"),
+                        custom.Button.url(
+                            "⚡ GROUP ⚡", "https://t.me/TEAMSquadUserbotSupport"
+                        ),
+                    ],
+                    [
+                        custom.Button.url(
+                            "✨ REPO ✨", "https://github.com/IlhamMansiez/PETERCORDBOT"),
+                        custom.Button.url
+                    (
+                            "🔰 TUTORIAL 🔰", ""
+                    )
+                    ],
+                ],
+                link_preview=False,
+            )
