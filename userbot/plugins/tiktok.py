@@ -97,11 +97,10 @@ async def _(event):
 
   
             
-CMD_HELP.update({"tiktok": "`.tti` <link> :\
-      \nUSAGE: Shows you the information of the given tiktok video link.\
-      \n\n `.ttv `<link>\
-      \nUSAGE: Sends you the tiktok video of the given link without watermark\
-      \n\n `.wttv `<link>\
-      \n\nUSAGE: Sends you the tiktok video of the given link with watermark\
-      "
-})             
+CmdHelp("tiktok").add_command(
+  "tti", "<link>", "Mencari vidio di tiktok."
+).add_command(
+  "ttv", "<link>", "mencari ditiktok"
+).add_command(
+  "wttv", "<link>", "mencari ditiktok"
+).add()
