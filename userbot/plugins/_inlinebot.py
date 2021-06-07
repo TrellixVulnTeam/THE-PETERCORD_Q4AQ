@@ -196,9 +196,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
                 result += f"**❌ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
-                result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n┗━━━━━━━━━━━━━━━━━━━\n"
+                result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
         else:
-            result += f"**┏━━━━━━━━━━━━━━━━━━━\nTerdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
+            result += f"**┏━━━━━━━━━━━━━━━━━━━\n Terdata:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n┗━━━━━━━━━━━━━━━━━━━\n"
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**❌ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ🎖 Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
