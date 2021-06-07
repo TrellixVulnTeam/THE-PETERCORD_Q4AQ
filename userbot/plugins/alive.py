@@ -40,18 +40,18 @@ file4 = "https://telegra.ph/file/2d2a335d26a0d33a1e385.jpg"
 """ =======================CONSTANTS====================== """
 pm_caption = "  __**⚡⚡𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄⚡⚡**__\n\n"
 
-pm_caption += f"**━━━━━━━━━━━━━━━━━━━━**\n\n"
+pm_caption += f"**━━━━━━━━━━━━━━━━━━**\n\n"
 pm_caption += (
     f"                 ⚡𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔⚡\n  **👾[{DEFAULTUSER}](tg://user?id={PETERCORD})👾**\n\n"
 )
-pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
+pm_caption += f"┏━━━━━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡:` `2-2-7` \n"
 pm_caption += f"┣•➳➠ `𝗩𝗘𝗥𝗦𝗜𝗢𝗡:` `{PETERCORDversion}`\n"
 pm_caption += f"┣•➳➠ `𝗦𝗨𝗗𝗢:` `{sudou}`\n"
 pm_caption += f"┣•➳➠ `𝗖𝗛𝗔𝗡𝗡𝗘𝗟:` [𝙿𝙴𝚃𝙴𝚁𝙲𝙾𝚁𝙳](https://t.me/TEAMSquadUserbotSupport)\n"
 pm_caption += f"┣•➳➠ `𝗖𝗥𝗘𝗔𝗧𝗢𝗥:` [Ilham Mansiez](https://t.me/diemmmmmmmmmm)\n"
 pm_caption += f"┣•➳➠ `𝗦𝗨𝗣𝗣𝗢𝗥𝗧:` [PETERCORD](https://t.me/TEAMSquadUserbotSupport)\n"
-pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
+pm_caption += f"┗━━━━━━━━━━━━━━━━━\n"
 pm_caption += " [⚡REPO⚡](https://github.com/IlhamMansiez/PETERCORDBOT) 🔸 [📜License📜](https://github.com/IlhamMansiez/PETERCORDBOT/blob/master/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
