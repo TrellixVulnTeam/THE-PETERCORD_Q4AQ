@@ -30,7 +30,7 @@ from userbot.Config import Config
 
 PETERCORD_row = Config.BUTTONS_IN_HELP
 PETERCORD_emoji = Config.EMOJI_IN_HELP
-# thats how a lazy guy imports
+# Petercord
 # PETERCORD
 
 def button(page, modules):
@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"🎖 " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"⚙ " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -127,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**((((((𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧))))))\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n 𝐑𝐄𝐏𝐎 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦** [𝗦𝗨𝗣𝗣𝗢𝗥𝗧](https://t.me/TEAMSquadUserbotSupport) 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡\n\n**𝗝𝗨𝗠𝗟𝗔𝗛 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗧𝗘𝗥𝗦𝗘𝗗𝗜𝗔 :** `{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** {page + 1}/{veriler[0]}",
+            f"**𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n 𝐑𝐄𝐏𝐎 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦** [𝗦𝗨𝗣𝗣𝗢𝗥𝗧](https://t.me/TEAMSquadUserbotSupport) 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡\n\n**𝗝𝗨𝗠𝗟𝗔𝗛 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗧𝗘𝗥𝗦𝗘𝗗𝗜𝗔 :** `{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -136,7 +136,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_PETERCORD(event,
-              "🎖PETERCORDBOT Menu Provider Is now Closed🎖\n\n         **[© PETERCORDBOT ™](t.me/TEAMSquadUserbotSupport)**", 5, link_preview=False
+              "Menu close \n\n **[© PETERCORDBOT ™](t.me/TEAMSquadUserbotSupport)**", 5, link_preview=False
             )
         else:
             PETERCORD_alert = "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™"
