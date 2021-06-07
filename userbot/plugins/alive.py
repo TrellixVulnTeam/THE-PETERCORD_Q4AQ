@@ -30,39 +30,29 @@ else:
 
 PETERCORD = bot.uid
 
-edit_time = 10
-""" =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
-file2 = "https://telegra.ph/file/e4142fc1d14bc3c8181a3.jpg"
-file3 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
-""" =======================CONSTANTS====================== """
-pm_caption = "🎖PETERCORD ALIVE🎖\n\n"
 
+edit_time = 16
+""" =======================CONSTANTS====================== """
+file1 = "https://telegra.ph/file/2408a2877646132ac52fd.mp4"
+file2 = "https://telegra.ph/file/e97d640332ce5eadb3f89.mp4"
+file3 = "https://telegra.ph/file/0b2862d312a2aeb804b36.mp4"
+file4 = "https://telegra.ph/file/866c79e351350a08f2b06.mp4"
+""" =======================CONSTANTS====================== """
+pm_caption = "  __**⚡⚡𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄⚡⚡**__\n\n"
+
+pm_caption += f"**━━━━━━━━━━━━━━━━━━━━**\n\n"
 pm_caption += (
-    f" 🎖𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 : [{DEFAULTUSER}](tg://user?id={PETERCORD})\n\n"
+    f"                 ⚡𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔⚡\n  **👾[{DEFAULTUSER}](tg://user?id={PETERCORD})👾**\n\n"
 )
-
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
-
-pm_caption += f"┣|𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 : `1.15.0` \n\n"
-
-pm_caption += f"┣|𝗖𝗢𝗗𝗘𝗕𝗢𝗧 : `{PETERCORDversion}`\n"
-
-pm_caption += f"┣|𝗦𝗨𝗗𝗢       : `{sudou}`\n"
-
-pm_caption += f"┣|𝗩𝗘𝗥𝗦𝗜𝗢𝗡   : `PETERCORD.V20`\n"
-
-pm_caption += f"┣|𝗢𝗪𝗡𝗘𝗥𝗦   : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n"
-
-pm_caption += f"┣|𝗦𝗨𝗣𝗣𝗢𝗥𝗧  : [KLIK DISINI](https://t.me/TEAMSquadUserbotSupport)\n\n"
-
-pm_caption += f"┗━━━━━━━━━━━━━━━━━━━ \n\n"
-
-pm_caption += f"┏━━━━━━━━━━━━━━━━━━━ \n"
-
-pm_caption += f"┣|[𝗥𝗘𝗣𝗢](https://github.com/IlhamMansiez/PETERCORDBOT) 🎖 [OWNER](https://t.me/diemmmmmmmmmm)\n"
-
-pm_caption += f"┗━━━━━━━━━━━━━━━━━━━ \n"
+pm_caption += f"┣•➳➠ `𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡:` `{version.__version__}` \n"
+pm_caption += f"┣•➳➠ `𝗩𝗘𝗥𝗦𝗜𝗢𝗡:` `{PETERCORDversion}`\n"
+pm_caption += f"┣•➳➠ `𝗦𝗨𝗗𝗢:` `{sudou}`\n"
+pm_caption += f"┣•➳➠ `𝗖𝗛𝗔𝗡𝗡𝗘𝗟:` [𝙿𝙴𝚃𝙴𝚁𝙲𝙾𝚁𝙳](https://t.me/TEAMSquadUserbotSupport)\n"
+pm_caption += f"┣•➳➠ `𝗖𝗥𝗘𝗔𝗧𝗢𝗥:` [Ilham Mansiez](https://t.me/diemmmmmmmmmm)\n"
+pm_caption += f"┣•➳➠ `𝗦𝗨𝗣𝗣𝗢𝗥𝗧:` [PETERCORD](https://t.me/TEAMSquadUserbotSupport)\n"
+pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
+pm_caption += " [⚡REPO⚡](https://github.com/IlhamMansiez/PETERCORDBOT) 🔸 [📜License📜](https://github.com/IlhamMansiez/PETERCORDBOT/blob/main/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
