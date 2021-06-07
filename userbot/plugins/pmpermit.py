@@ -41,7 +41,7 @@ USER_BOT_NO_WARN = (
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @borg.on(admin_cmd(pattern="allow|.a ?(.*)"))
+    @borg.on(admin_cmd(pattern="allow|.ok ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -143,7 +143,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.delete()
 
-    @borg.on(admin_cmd(pattern="disallow ?(.*)"))
+    @borg.on(admin_cmd(pattern="tolak ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -309,9 +309,9 @@ async def hehehe(event):
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!😏**")
 
 CmdHelp("pmpermit").add_command(
-  "allow|.a", "<pm use only>", "It allow the user to PM you."
+  "ok", "<pm use only>", "It allow the user to PM you."
 ).add_command(
-  "disallow|.da", "<pm use only>", "It disallows the user to PM. If user crosses the PM limit after disallow he/she will get blocked automatically"
+  "tolak", "<pm use only>", "It disallows the user to PM. If user crosses the PM limit after disallow he/she will get blocked automatically"
 ).add_command(
   "block", "<pm use only>", "You know what it does.... Blocks the user"
 ).add_command(
