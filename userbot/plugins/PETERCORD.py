@@ -83,6 +83,7 @@ async def amireallyalive(alive):
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
         )
+
      elif event.text=='':
               result = builder.article(
                   "@TEAMSquadUserbotSupport",
