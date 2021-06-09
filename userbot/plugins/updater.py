@@ -4,11 +4,7 @@ import sys
 
 import git
 
-from userbot.Config import (
-    HEROKU_API_KEY,
-    HEROKU_APP_NAME,
-    UPSTREAM_REPO_URL,
-    UPSTREAM_REPO_BRANCH)
+from userbot.Config import Config
 from PETERCORDBOT.utils import admin_cmd, sudo_cmd
 
 
