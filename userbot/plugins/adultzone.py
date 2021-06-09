@@ -13,17 +13,17 @@ from userbot import *
 from PETERCORDBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
-@bot.on(admin_cmd("boobs$"))
-@bot.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
+@bot.on(admin_cmd("payudara$"))
+@bot.on(sudo_cmd(pattern="payudara$", allow_sudo=True))
 async def boobs(event):
     if event.fwd_from:
         return
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
     pic_loc = os.path.join(Var.TEMP_DOWNLOAD_DIRECTORY, "bobs.jpg")
-    a = await event.reply("Finding some big boobs for u 🧐")
+    a = await event.reply("Menemukan beberapa payudara besar untukmu 😂")
     await asyncio.sleep(0.5)
-    await a.edit("Sending some big boobs🤪")
+    await a.edit("Ini besar banget nih 😂")
     nsfw = requests.get("http://api.oboobs.ru/noise/1").json()[0]["preview"]
     urllib.request.urlretrieve("http://media.oboobs.ru/{}".format(nsfw), pic_loc)
     await event.client.send_file(event.chat_id, pic_loc, force_document=False)
@@ -32,17 +32,17 @@ async def boobs(event):
     await a.delete()
 
 
-@bot.on(admin_cmd("butts$"))
-@bot.on(sudo_cmd(pattern="butts$", allow_sudo=True))
+@bot.on(admin_cmd("pantat$"))
+@bot.on(sudo_cmd(pattern="pantat$", allow_sudo=True))
 async def butts(event):
     if event.fwd_from:
         return
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
     pic_loc = os.path.join(Var.TEMP_DOWNLOAD_DIRECTORY, "butts.jpg")
-    a = await event.reply("Finding some beautiful butts for u🧐")
+    a = await event.reply("Menemukan beberapa pantat yang indah untuk Anda 🧐")
     await asyncio.sleep(0.5)
-    await a.edit("Sending some beautiful butts🤪")
+    await a.edit("Mengirim beberapa pantat yang indah 😂")
     nsfw = requests.get("http://api.obutts.ru/noise/1").json()[0]["preview"]
     urllib.request.urlretrieve("http://media.obutts.ru/{}".format(nsfw), pic_loc)
     await event.client.send_file(event.chat_id, pic_loc, force_document=False)
@@ -51,7 +51,7 @@ async def butts(event):
     await a.delete()
 
 CmdHelp("adultzone").add_command(
-  'boobs', None, 'Sends a random boobs pic'
+  'payudara', None, 'Mengirim gambar payudara acak'
 ).add_command(
-  'butts', None, 'Sends a random Butt pic'
+  'pantat', None, 'Mengirim gambar pantat acak'
 ).add()
