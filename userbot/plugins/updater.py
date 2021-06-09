@@ -124,7 +124,6 @@ async def update(event, repo, ups_rem, ac_br):
     await event.delete()
 
 args = [sys.executable, "-m", "userbot"]
-    execle(sys.executable, *args, environ)
     return
 
 
