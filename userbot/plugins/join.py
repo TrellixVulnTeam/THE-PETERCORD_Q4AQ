@@ -5,7 +5,7 @@ from telethon import functions
 from userbot.utils import admin_cmd
 from PETERCORDBOT import CMD_HELP
 
-@borg.on(admin_cmd(pattern="join ?(.*)"))
+@borg.on(admin_cmd(pattern="masuk ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -38,6 +38,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "adduser": 
-    ".join <username>"
+    ".masuk <username>"
     "\nAdd the username in the grp/channel where u type."
     })
