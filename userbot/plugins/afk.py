@@ -96,7 +96,7 @@ async def on_afk(event):
         msg = None
         
         message_to_reply = (
-            f"🛡 𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗  [{DEFAULTUSER}](tg://user?id={PETERCORD}) Sedang AFK \n**Terakhir dilihat** `{total_afk_time}`\n"
+            f"🛡 𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗  \n**NAMA:** [{DEFAULTUSER}](tg://user?id={PETERCORD})\n Sedang AFK \n**Tidak Aktif Saat ini`\n"
             + f"\n\n☛ **𝗔𝗟𝗔𝗦𝗔𝗡:** -\n`{reason}`"
   if reason
             else f"**Heyy!**\n__Saat ini saya tidak hadir.__\n__Tunggulah, sampai dia hadir Dari__ `{total_afk_time}`\nSaya akan kembali ketika saya merasa datang."
