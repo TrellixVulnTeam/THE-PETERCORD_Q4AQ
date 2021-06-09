@@ -11,7 +11,7 @@ from userbot import bot as PETERCORDBOT
 
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
-PETERCORD_logo = "./PETERCORD725/PETERCORSBOT_logo.jpg"
+PETERCORD_logo = "./PetercordBot/logo_petercord.png"
 h1m4n5hu0p = PETERCORDBOT.uid
 PETERCORD = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
 
