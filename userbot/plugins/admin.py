@@ -444,7 +444,7 @@ CmdHelp("admin").add_command(
    'mute', '<username/reply> <reason (opsional)>', 'Bungkam orang dalam obrolan, juga berfungsi di admin.' 
 ).add_command( 
    'unmute', '<username/reply>', 'Menghapus orang tersebut dari daftar yang dibisukan.' 
-)add_command( 
+).add_command( 
    'pin', '<reply> atau .pin loud', 'Pin pesan yang dibalas di Grup' 
 ).add_command( 
    'kick', '<username/reply>', 'tendang orang itu dari obrolan Anda' 
