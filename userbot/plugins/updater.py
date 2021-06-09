@@ -1,146 +1,231 @@
+"""
+This module updates the userbot based on upstream revision
+"""
+
+from os import remove, execle, path, environ
 import asyncio
-import os
 import sys
 
-import git
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot.Config import Config
-from PETERCORDBOT.utils import admin_cmd, sudo_cmd
+from userbot import (
+    BOTLOG,
+    BOTLOG_CHATID,
+    CMD_HELP,
+    HEROKU_API_KEY,
+    HEROKU_APP_NAME,
+    UPSTREAM_REPO_URL,
+    UPSTREAM_REPO_BRANCH)
+from userbot.events import register
 
-# -- Constants -- #
-IS_SELECTED_DIFFERENT_BRANCH = (
-    "looks like a custom branch {branch_name} "
-    "is being used:\n"
-    "in this case, Updater is unable to identify the branch to be updated."
-    "please check out to an official branch, and re-start the updater."
-)
-OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = "**The PETERCORDBOT** is up-to-date sur."
-NEW_BOT_UP_DATE_FOUND = (
-    "new update found for {branch_name}\n"
-    "changelog: \n\n{changelog}\n"
-    "updating your PETERCORDBOT ..."
-)
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your PETERCORBOT...`"
-REPO_REMOTE_NAME = "temponame"
-IFFUCI_ACTIVE_BRANCH_NAME = "master"
-DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
-NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
-HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
-# -- Constants End -- #
+requirements_path = path.join(
+    path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="scan ?(.*)", allow_sudo=True))
-async def updater(message):
+async def gen_chlog(repo, diff):
+    ch_log = ''
+    d_form = "%d/%m/%y"
+    for c in repo.iter_commits(diff):
+        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
+    return ch_log
+
+
+async def update_requirements():
+    reqs = str(requirements_path)
     try:
-        repo = git.Repo()
-    except git.exc.InvalidGitRepositoryError as e:
-        repo = git.Repo.init()
-        origin = repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
+        process = await asyncio.create_subprocess_shell(
+            ' '.join([sys.executable, "-m", "pip", "install", "-r", reqs]),
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE)
+        await process.communicate()
+        return process.returncode
+    except Exception as e:
+        return repr(e)
+
+
+async def deploy(event, repo, ups_rem, ac_br, txt):
+    if HEROKU_API_KEY is not None:
+        import heroku3
+        heroku = heroku3.from_key(HEROKU_API_KEY)
+        heroku_app = None
+        heroku_applications = heroku.apps()
+        if HEROKU_APP_NAME is None:
+            await event.edit(
+                '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
+                ' untuk dapat deploy perubahan terbaru dari 🛡PETERCORD USERBOT🛡.`'
+            )
+            repo.__del__()
+            return
+        for app in heroku_applications:
+            if app.name == HEROKU_APP_NAME:
+                heroku_app = app
+                break
+        if heroku_app is None:
+            await event.edit(
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy 🛡PETERCORD USERBOT🛡 dyno.`'
+            )
+            return repo.__del__()
+        await event.edit('`[HEROKU]:'
+                         '\nDyno 🛡PETERCORD USERBOT🛡 Sedang Dalam Proses, Mohon Menunggu 7-8 Menit`'
+                         )
+        ups_rem.fetch(ac_br)
+        repo.git.reset("--hard", "FETCH_HEAD")
+        heroku_git_url = heroku_app.git_url.replace(
+            "https://", "https://api:" + HEROKU_API_KEY + "@")
+        if "heroku" in repo.remotes:
+            remote = repo.remote("heroku")
+            remote.set_url(heroku_git_url)
+        else:
+            remote = repo.create_remote("heroku", heroku_git_url)
+        try:
+            remote.push(refspec="HEAD:refs/heads/master", force=True)
+        except GitCommandError as error:
+            await event.edit(f'{txt}\n`Terjadi Kesalahan Di Log:\n{error}`')
+            return repo.__del__()
+        build = app.builds(order_by="created_at", sort="desc")[0]
+        if build.status == "failed":
+            await event.edit(
+                "`Build Gagal!\n" "Dibatalkan atau ada beberapa kesalahan...`"
+            )
+            await asyncio.sleep(5)
+            return await event.delete()
+        else:
+            await event.edit("`🛡PETERCORD USERBOT🛡 Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu Petercord.....`")
+            await asyncio.sleep(15)
+            await event.delete()
+
+        if BOTLOG:
+            await event.client.send_message(
+                BOTLOG_CHATID, "🔧PETERCORD \n"
+                "`🛡PETERCORD USERBOT🛡 Berhasil Di Update`")
+
+    else:
+        await event.edit('`[HEROKU]:'
+                         '\nHarap Siapkan Variabel` **HEROKU_API_KEY** `.`'
+                         )
+        await asyncio.sleep(10)
+        await event.delete()
+    return
+
+
+async def update(event, repo, ups_rem, ac_br):
+    try:
+        ups_rem.pull(ac_br)
+    except GitCommandError:
+        repo.git.reset("--hard", "FETCH_HEAD")
+    await update_requirements()
+    await event.edit('**🛡 PETERCORD USERBOT** `Berhasil Di Update!`')
+    await asyncio.sleep(1)
+    await event.edit('**🛡 PETERCORD USERBOT** `Di Restart....`')
+    await asyncio.sleep(1)
+    await event.edit('`Mohon Menunggu Beberapa Detik 🛡PETERCORD USERBOT🛡 ツ`')
+    await asyncio.sleep(10)
+    await event.delete()
+
+    if BOTLOG:
+        await event.client.send_message(
+            BOTLOG_CHATID, "🔧PETERCORD \n"
+            "**🛡PETERCORD USERBOT🛡 Telah Di Perbarui ツ**")
+        await asyncio.sleep(100)
+        await event.delete()
+
+    # Spin a new instance of bot
+    args = [sys.executable, "-m", "userbot"]
+    execle(sys.executable, *args, environ)
+    return
+
+
+@ register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+async def upstream(event):
+    "For .update command, check if the bot is up to date, update if specified"
+    await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
+    conf = event.pattern_match.group(1)
+    off_repo = UPSTREAM_REPO_URL
+    force_update = False
+    try:
+        txt = "`Maaf Petercord Pembaruan Tidak Dapat Di Lanjutkan Karna "
+        txt += "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f'{txt}\n`Directory {error} Tidak Dapat Di Temukan`')
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f'{txt}\n`Gagal Awal! {error}`')
+        return repo.__del__()
+    except InvalidGitRepositoryError as error:
+        if conf is None:
+            return await event.edit(
+                f"`Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
+                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan .update now.`"
+            )
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head(IFFUCI_ACTIVE_BRANCH_NAME, origin.refs.master)
+        force_update = True
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
 
-    active_branch_name = repo.active_branch.name
-    if active_branch_name != IFFUCI_ACTIVE_BRANCH_NAME:
-        await message.edit(
-            IS_SELECTED_DIFFERENT_BRANCH.format(branch_name=active_branch_name)
-        )
-        return False
-
+    ac_br = repo.active_branch.name
+    if ac_br != UPSTREAM_REPO_BRANCH:
+        await event.edit(
+            '**[UPDATER]:**\n'
+            f'`Looks like you are using your own custom branch ({ac_br}). '
+            'in that case, Updater is unable to identify '
+            'which branch is to be merged. '
+            'please checkout to any official branch`')
+        return repo.__del__()
     try:
-        repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
-    except Exception as e:
-        print(e)
+        repo.create_remote('upstream', off_repo)
+    except BaseException:
+        pass
 
-    temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
-    temp_upstream_remote.fetch(active_branch_name)
+    ups_rem = repo.remote('upstream')
+    ups_rem.fetch(ac_br)
 
-    changelog = generate_change_log(
-        repo,
-        DIFF_MARKER.format(
-            remote_name=REPO_REMOTE_NAME, branch_name=active_branch_name
-        ),
-    )
+    changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
-    if not changelog:
-        await message.edit("`Updation in Progress......`")
-        await asyncio.sleep(5)
+    if changelog == '' and force_update is False:
+        await event.edit(
+            f'\n**🛡 Petercord-Userbot Sudah Versi Terbaru**\n')
+        await asyncio.sleep(15)
+        await event.delete()
+        return repo.__del__()
 
-    message_one = NEW_BOT_UP_DATE_FOUND.format(
-        branch_name=active_branch_name, changelog=changelog
-    )
-    message_two = NEW_UP_DATE_FOUND.format(branch_name=active_branch_name)
-
-    if len(message_one) > 4095:
-        with open("change.log", "w+", encoding="utf8") as out_file:
-            out_file.write(str(message_one))
-        await tgbot.send_message(
-            message.chat_id, document="change.log", caption=message_two
-        )
-        os.remove("change.log")
-    else:
-        await message.edit(message_one)
-
-    temp_upstream_remote.fetch(active_branch_name)
-    repo.git.reset("--hard", "FETCH_HEAD")
-
-    if Var.HEROKU_API_KEY is not None:
-        import heroku3
-
-        heroku = heroku3.from_key(Var.HEROKU_API_KEY)
-        heroku_applications = heroku.apps()
-        if len(heroku_applications) >= 1:
-            if Var.HEROKU_APP_NAME is not None:
-                heroku_app = None
-                for i in heroku_applications:
-                    if i.name == Var.HEROKU_APP_NAME:
-                        heroku_app = i
-                if heroku_app is None:
-                    await message.edit(
-                        "Invalid APP Name. Please set the name of your bot in heroku in the var `HEROKU_APP_NAME.`"
-                    )
-                    return
-                heroku_git_url = heroku_app.git_url.replace(
-                    "https://", "https://api:" + Var.HEROKU_API_KEY + "@"
-                )
-                if "heroku" in repo.remotes:
-                    remote = repo.remote("heroku")
-                    remote.set_url(heroku_git_url)
-                else:
-                    remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(
-                    deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote)
-                )
-
-            else:
-                await message.edit(
-                    "Please create the var `HEROKU_APP_NAME` as the key and the name of your bot in heroku as your value."
-                )
-                return
+    if conf is None and force_update is False:
+        changelog_str = f'**🛡 Pembaruan Untuk 🔮PETERCORD USERBOT🔮 [{ac_br}]:\n\n🛡 Pembaruan:**\n`{changelog}`'
+        if len(changelog_str) > 4096:
+            await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
+            file = open("output.txt", "w+")
+            file.write(changelog_str)
+            file.close()
+            await event.client.send_file(
+                event.chat_id,
+                "output.txt",
+                reply_to=event.id,
+            )
+            remove("output.txt")
         else:
-            await message.edit(NO_HEROKU_APP_CFGD)
+            await event.edit(changelog_str)
+        return await event.respond('**Perintah Untuk Update 🛡Petercord Userbot🛡**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Petercord Userbot.__')
+
+    if force_update:
+        await event.edit(
+            '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await message.edit("No heroku api key found in `HEROKU_API_KEY` var")
-
-
-def generate_change_log(git_repo, diff_marker):
-    out_put_str = ""
-    d_form = "%d/%m/%y"
-    for repo_change in git_repo.iter_commits(diff_marker):
-        out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
-    return out_put_str
-
-
-async def deploy_start(tgbot, message, refspec, remote):
-    await message.edit(RESTARTING_APP)
-    await message.edit(
-        "Updated your PETERCORDBOT successfully sur!!!\nNow type `.ping` after 5 mins to check if I'm on🚶😏"
-    )
-    await remote.push(refspec=refspec)
-    await tgbot.disconnect()
-    os.execl(sys.executable, sys.executable, *sys.argv)
-  
-  
+        await event.edit('`🔮 Proses Update Petercord-Userbot, Loading....1%`')
+        await event.edit('`🎻 Proses Update Petercord-Userbot, Loading....20%`')
+        await event.edit('`🎸 Proses Update Petercord-Userbot, Loading....35%`')
+        await event.edit('`🥁 Proses Update Petercord-Userbot, Loading....77%`')
+        await event.edit('`🎸 Proses Update Petercord-Userbot, Updating...90%`')
+        await event.edit('`🔮 Proses Update Petercord-Userbot, Mohon Menunggu Petercord....100%`')
+    if conf == "now":
+        await update(event, repo, ups_rem, ac_br)
+        await asyncio.sleep(10)
+        await event.delete()
+    elif conf == "deploy":
+        await deploy(event, repo, ups_rem, ac_br, txt)
+        await asyncio.sleep(10)
+        await event.delete()
+    return
