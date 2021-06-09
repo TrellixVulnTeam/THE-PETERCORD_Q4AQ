@@ -372,7 +372,7 @@ async def get_entity(msg):
     return bold, mono, italic, link
 
 
-async def REBELdoctype(name, size, htype, canvas):
+async def PETERCORDdoctype(name, size, htype, canvas):
     font = ImageFont.truetype("./temp/Roboto-Medium.ttf", 38)
     doc = Image.new("RGBA", (130, 130), (29, 29, 29, 255))
     draw = ImageDraw.Draw(doc)
