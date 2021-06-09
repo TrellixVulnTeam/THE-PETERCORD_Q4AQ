@@ -1,4 +1,4 @@
-# by uniborg...Thanks @spechide
+# Ilham mansiez
 # Now will be used in PETERCORDBOT too....
 import asyncio
 import datetime
@@ -11,7 +11,7 @@ from userbot import ALIVE_NAME, PETERCORDversion
 from PETERCORDBOT.utils import admin_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PetercordBot"
 
 PETERCORD = bot.uid
 
@@ -44,7 +44,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         PETERCORDBOT = await borg.send_message(
             event.chat_id,
-            "⚡__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+            "⚡ Saya Kembali datang\n**Tidak lagi AFK.**\n⏱️ `Terakhir:``"
             + total_afk_time
             + "`", file=PETERCORDpic
         )
@@ -52,7 +52,7 @@ async def set_not_afk(event):
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 "#AFKFALSE \nSet AFK mode to False\n"
-                + "⚡__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+                + "⚡ Saya kembali datang\n**Tidak lagi AFK.**\n⏱️ `Terakhir:``"
                 + total_afk_time
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -96,8 +96,8 @@ async def on_afk(event):
         msg = None
         
         message_to_reply = (
-            f"Hey, Pengguna PETERCORD  [{DEFAULTUSER}](tg://user?id={PETERCORD}) Telah  offline... Sejak ..\n**Terakhir dilihat** `{total_afk_time}`\n"
-            + f"\n\n⚡__Alasan saya__⚡ :-\n`{reason}`"
+            f"🛡 𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗  [{DEFAULTUSER}](tg://user?id={PETERCORD}) Sedang AFK \n**Terakhir dilihat** `{total_afk_time}`\n"
+            + f"\n\n☛ **𝗔𝗟𝗔𝗦𝗔𝗡:** -\n`{reason}`"
   if reason
             else f"**Heyy!**\n__Saat ini saya tidak hadir.__\n__Tunggulah, sampai dia hadir Dari__ `{total_afk_time}`\nSaya akan kembali ketika saya merasa datang."
         )
@@ -137,7 +137,7 @@ async def _(event):
         USER_AFK = f"yes: {reason} {PETERCORDpic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id, f"__**SAYA  Off**__ \n⚡ ALASAN `{reason}`", file=PETERCORDpic
+                event.chat_id, f"__**🛡 𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 Sedang AFK **\n**☛ 𝗔𝗟𝗔𝗦𝗔𝗡:** `{reason}`", file=PETERCORDpic
             )
         else:
             await borg.send_message(event.chat_id, f"**Saya Afk sekarang!**⚡", file=PETERCORDpic)
@@ -153,5 +153,5 @@ async def _(event):
 
 
 CmdHelp("afk").add_command(
-  'afk', '<reply to media>/<or type a reson>', 'Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.'
+  'afk', '<balas ke media>/<tulis teks>', 'Perintah untuk afk memberitahu bahwa kita sedang offline.'
 ).add()
