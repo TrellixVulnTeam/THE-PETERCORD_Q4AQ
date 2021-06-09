@@ -91,7 +91,7 @@ if ENV:
             "UPSTREAM_REPO_URL",
             "https://github.com/IlhamMansiez/PETERCORDBOT.git")
         UPSTREAM_REPO_BRANCH = os.environ.get(
-            "UPSTREAM_REPO_BRANCH", "main")
+            "UPSTREAM_REPO_BRANCH", "master")
 
         #Tag LOGGER
 
