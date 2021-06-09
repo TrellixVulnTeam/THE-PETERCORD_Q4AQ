@@ -65,8 +65,8 @@ async def _(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@bot.on(admin_cmd(pattern="savewelcome", outgoing=True))  # pylint:disable=E0602
-@bot.on(sudo_cmd(pattern="savewelcome", allow_sudo=True))
+@bot.on(admin_cmd(pattern="setwelcome", outgoing=True))  # pylint:disable=E0602
+@bot.on(sudo_cmd(pattern="setwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -81,8 +81,8 @@ async def _(event):
         await edit_or_reply(event, "Welcome note saved. ")
 
 
-@bot.on(admin_cmd(pattern="clearwelcome", outgoing=True)) # pylint:disable=E0602
-@bot.on(sudo_cmd(pattern="clearwelcome", allow_sudo=True))
+@bot.on(admin_cmd(pattern="rmwelcome", outgoing=True)) # pylint:disable=E0602
+@bot.on(sudo_cmd(pattern="rmwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,8 +94,8 @@ async def _(event):
     )
 
 
-@bot.on(admin_cmd(pattern="listwelcome", outgoing=True)) # pylint:disable=E0602
-@bot.on(sudo_cmd(pattern="listwelcome", allow_sudo=True))
+@bot.on(admin_cmd(pattern="checkwelcome", outgoing=True)) # pylint:disable=E0602
+@bot.on(sudo_cmd(pattern="checkwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -109,9 +109,9 @@ async def _(event):
         await edit_or_reply(event, "No Welcome Message found")
 
 CmdHelp("welcome").add_command(
-  "listwelcome", None, "Gets the saved welcome message of PETERCORDBOT"
+  "checkwelcome", None, "Gets the saved welcome message of PETERCORDBOT"
 ).add_command(
-  "clearwelcome", None, "Clears/Deletes the welcome message (if any)"
+  "rmwelcome", None, "Clears/Deletes the welcome message (if any)"
 ).add_command(
-  "savewelcome", "<reply to msg>", "Saves the replied msg as welcome note from you."
+  "setwelcome", "<reply to msg>", "Saves the replied msg as welcome note from you."
 ).add()
