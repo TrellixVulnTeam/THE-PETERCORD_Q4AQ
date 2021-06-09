@@ -87,6 +87,11 @@ if ENV:
 
         TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
         if TAG_LOGGER: TAG_LOGGER = int(TAG_LOGGER)
+        UPSTREAM_REPO_URL = os.environ.get(
+            "UPSTREAM_REPO_URL",
+            "https://github.com/IlhamMansiez/PETERCORDBOT.git")
+        UPSTREAM_REPO_BRANCH = os.environ.get(
+            "UPSTREAM_REPO_BRANCH", "main")
 
         #Tag LOGGER
 
