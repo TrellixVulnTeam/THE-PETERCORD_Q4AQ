@@ -19,14 +19,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import (
-    BOTLOG,
-    BOTLOG_CHATID,
-    CMD_HELP,
-    HEROKU_API_KEY,
-    HEROKU_APP_NAME,
-    UPSTREAM_REPO_URL,
-    UPSTREAM_REPO_BRANCH)
+
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
