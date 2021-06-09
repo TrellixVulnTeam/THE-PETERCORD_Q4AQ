@@ -6,7 +6,7 @@ from userbot import bot as PETERCORDBOT
 from userbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
-PETERCORD_logo = "./PETERCORD725/PETERCORDBOT_logo.jpg"
+PETERCORD_logo = "./PetercordBot/petercord_logo.png"
 
 @PETERCORDBOT.on(admin_cmd(pattern=r"cmds"))
 @PETERCORDBOT.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
