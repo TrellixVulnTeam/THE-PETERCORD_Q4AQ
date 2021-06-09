@@ -5,7 +5,6 @@ import sys
 import git
 
 from userbot.Config import (
-    CMD_HELP,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     UPSTREAM_REPO_URL,
