@@ -28,6 +28,12 @@ BRAIN_CHECKER = []
 INT_PLUG = ""
 LOAD_PLUG = {}
 
+if Config.UPSTREAM_REPO == "petercord":
+    UPSTREAM_REPO_URL = "https://github.com/IlhamMansiez/THE-PETERCORD"
+else:
+    UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
+
+
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
