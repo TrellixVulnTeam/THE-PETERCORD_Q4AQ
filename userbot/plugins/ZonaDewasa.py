@@ -50,7 +50,7 @@ async def butts(event):
     await event.delete()
     await a.delete()
 
-CmdHelp("adultzone").add_command(
+CmdHelp("zonadewasa").add_command(
   'payudara', None, 'Mengirim gambar payudara acak'
 ).add_command(
   'pantat', None, 'Mengirim gambar pantat acak'
