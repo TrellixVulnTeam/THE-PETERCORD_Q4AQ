@@ -1,6 +1,6 @@
 # thanks to @Skastickers for stickers....
 # Among us.....
-# credits to catuserbot
+# credits to Ilham mansiez
 
 
 import asyncio
@@ -9,7 +9,7 @@ from userbot.cmdhelp import CmdHelp
 from userbot import *
 from PETERCORDBOT.utils import *
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD"
 
 
 @bot.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
@@ -21,7 +21,7 @@ async def _(event):
     USERNAME = f"tg://user?id={h1m4n5hu0p}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    text1 = await edit_or_reply(event, "Hmm... Looks like Something is wrong here🤔🧐!!")
+    text1 = await edit_or_reply(event, "Hmm... Sepertinya ada yang salah di sini🤔🧐!!")
     await asyncio.sleep(2)
     await text1.delete()
     stcr1 = await event.client.send_file(
@@ -45,15 +45,15 @@ async def _(event):
     stcr3 = await event.client.send_file(
         event.chat_id, "CAADAQADOwADnjOcH77v3Ap51R7gAg"
     )
-    text4 = await event.reply(f"**Lainnya :** Dimana Astaga hiks ")
+    text4 = await event.reply(f"**Boncel :** Dimana Astaga hiks ")
     await asyncio.sleep(2)
-    await text4.edit(f"**Lainnya :** Siapa itu? ")
+    await text4.edit(f"**Boncel :** Siapa itu? ")
     await asyncio.sleep(2)
     await text4.edit(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** Ok {name} , Kita bantai nanti {name}  Aku pukul kepalanya,"
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Ok Boncel , Kita bantai nanti {name}  Aku pukul kepalanya,"
     )
     await asyncio.sleep(3)
-    await text4.edit(f"**Lainnya kita tebas :**Okay.. setuju gak? {name} ")
+    await text4.edit(f"**Boncel kita tebas :**Okay.. setuju gak? {name} ")
     await asyncio.sleep(2)
     await stcr3.delete()
     await text4.delete()
@@ -139,11 +139,11 @@ async def _(event):
 
 
 CmdHelp("amongus").add_command(
-  'imp', 'Name/username', 'Finds the imposter with sticker. Imposter-True'
+  'imp', 'Name/username', 'Menemukan penipu dengan stiker. Penipu-Benar'
 ).add_command(
-  'impn', 'Name/Username', 'Finds the imposter with sticker. Imposter-False'
+  'impn', 'Name/Username', 'Menemukan penipu dengan stiker. Penipu-Salah'
 ).add_command(
-  'timp', 'name/username', 'Finds imposter without sticker(Text only). Imposter - True'
+  'timp', 'name/username', 'Menemukan penipu tanpa stiker (Hanya teks). Penipu - Benar'
 ).add_command(
-  'timpn', 'name/username', 'Finds imposter without sticker(Text Only). Imposter - False'
+  'timpn', 'name/username', 'Menemukan penipu tanpa stiker (Hanya teks). Penipu - Salah'
 ).add()
