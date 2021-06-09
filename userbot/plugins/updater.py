@@ -1,3 +1,18 @@
+import asyncio
+import os
+import sys
+
+import git
+
+from userbot.Config import (
+    CMD_HELP,
+    HEROKU_API_KEY,
+    HEROKU_APP_NAME,
+    UPSTREAM_REPO_URL,
+    UPSTREAM_REPO_BRANCH)
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd
+
+
 """
 This module updates the userbot based on upstream revision
 """
@@ -95,20 +110,6 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(15)
             await event.delete()
 
-        if BOTLOG:
-            await event.client.send_message(
-                BOTLOG_CHATID, "🔧PETERCORD \n"
-                "`🛡PETERCORD USERBOT🛡 Berhasil Di Update`")
-
-    else:
-        await event.edit('`[HEROKU]:'
-                         '\nHarap Siapkan Variabel` **HEROKU_API_KEY** `.`'
-                         )
-        await asyncio.sleep(10)
-        await event.delete()
-    return
-
-
 async def update(event, repo, ups_rem, ac_br):
     try:
         ups_rem.pull(ac_br)
@@ -123,20 +124,13 @@ async def update(event, repo, ups_rem, ac_br):
     await asyncio.sleep(10)
     await event.delete()
 
-    if BOTLOG:
-        await event.client.send_message(
-            BOTLOG_CHATID, "🔧PETERCORD \n"
-            "**🛡PETERCORD USERBOT🛡 Telah Di Perbarui ツ**")
-        await asyncio.sleep(100)
-        await event.delete()
-
-    # Spin a new instance of bot
-    args = [sys.executable, "-m", "userbot"]
+args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     return
 
 
-@ register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@borg.on(admin_cmd("update(?: |$)(now|deploy)?(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="update(?: |$)(now|deploy)?(.*)", allow_sudo=True))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
@@ -229,3 +223,4 @@ async def upstream(event):
         await asyncio.sleep(10)
         await event.delete()
     return
+
