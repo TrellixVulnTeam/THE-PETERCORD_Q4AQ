@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from REBELBOT.plugins.sql_helper import BASE, SESSION
+from PETERCORDBOT.plugins.sql_helper import BASE, SESSION
 
 
 class Moidata(BASE):
