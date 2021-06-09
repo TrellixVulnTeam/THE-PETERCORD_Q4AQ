@@ -16,5 +16,5 @@ async def source(e):
 
 
 CmdHelp("repo").add_command(
-  'repo', None, 'Menapilkan repot bot'
+  'repo', None, 'Menapilkan repo bot'
 ).add()
