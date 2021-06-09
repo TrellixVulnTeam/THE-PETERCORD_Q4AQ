@@ -1,9 +1,4 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-""" Userbot module containing commands related to android"""
+# PetercordBot
 
 import json
 import re
@@ -232,14 +227,14 @@ async def twrp(request):
     await edit_or_reply(request, reply)
 
 
-CmdHelp("android").add_command(
-  'magisk', None, 'Get latest magisk release'
+CmdHelp("android").add_command( 
+  'magisk', None, 'Dapatkan rilis magisk terbaru' 
+).add_command( 
+  'device', '<codename>', 'Dapatkan info tentang nama kode atau model perangkat android' 
+).add_command( 
+  'codename', '<brand> <device>', 'Search for android device codename' 
 ).add_command(
-  'device', '<codename>', 'Get info about android device codename or model'
+  'specs', '<brand> <device>', 'Dapatkan info spesifikasi perangkat.' 
 ).add_command(
-  'codename', '<brand> <device>', 'Search for android device codename'
-).add_command(
-  'specs', '<brand> <device>', 'Get device specifications info.'
-).add_command(
-  'twrp', '<codename>', 'Get latest twrp download for android device.'
+ 'twrp', '<codename>', 'Dapatkan unduhan twrp terbaru untuk perangkat android.' 
 ).add()
