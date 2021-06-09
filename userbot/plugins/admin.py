@@ -449,5 +449,5 @@ CmdHelp("admin").add_command(
 ).add_command( 
    'kick', '<username/reply>', 'tendang orang itu dari obrolan Anda' 
 ).add_command( 
-   'iundlt', Tidak ada, 'tampilkan 5 pesan terakhir yang dihapus dalam grup.' 
+   'iundlt', None, 'tampilkan 5 pesan terakhir yang dihapus dalam grup.' 
 ).add()
