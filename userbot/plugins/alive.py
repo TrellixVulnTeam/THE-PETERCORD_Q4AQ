@@ -1,7 +1,5 @@
-# Thanks to Sipak bro and Aryan.. 
-# animation Idea by @NOOB_GUY_OP (Sipakisking) 
+ 
 # Made by @diemmmmmmmmmm...and thanks to @Crackexy for the logos...
-# Kang with credits else gay...
 # Porting in PETERCORD Userbot by @diemmmmmmmmmm
 
 import asyncio
@@ -11,6 +9,7 @@ from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME, PETERCORDversion
 from PETERCORDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
+from userbot.cmdhelp import CmdHelp
 
 # TENTANG AKU DAN DIA
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸𝔹𝕆𝕋"
@@ -88,3 +87,6 @@ async def amireallyalive(alive):
     await alive.delete()
     
     
+CmdHelp("alive").add_command(
+  'alive', None, 'Menampilkan logo Bot.'
+).add()
