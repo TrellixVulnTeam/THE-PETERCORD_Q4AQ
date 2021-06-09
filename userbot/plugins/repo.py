@@ -15,3 +15,6 @@ async def source(e):
         await edit_or_reply(e, "╭┄┅┯┅┄┄┅┯┅┄╮**\n\n [𝗣 𝗘 𝗧 𝗘 𝗥 𝗖 𝗢 𝗥 𝗗](https://github.com/IlhamMansiez/PETERCORDBOT)\n\n [𝗢 𝗪 𝗡 𝗘 𝗥 𝗦](t.me/diemmmmmmmmmm)\n\n [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport)\n\n**╰┄┅┷┅┄┄┅┷┅┄╯**\n")
 
 
+CmdHelp("repo").add_command(
+  'repo', None, 'Menapilkan repot bot'
+).add()
