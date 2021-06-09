@@ -74,7 +74,7 @@ async def set_group_photo(gpic):
     if gpic.fwd_from:
         return
     if not gpic.is_group:
-        await edit_or_reply(gpic, "`I don't think this is a group.`")
+        await edit_or_reply(gpic, "`Saya tidak berpikir ini adalah grup.`")
         return
     replymsg = await gpic.get_reply_message()
     chat = await gpic.get_chat()
@@ -109,7 +109,7 @@ async def set_group_photo(gpic):
             await gpic.client.send_message(
                 BOTLOG_CHATID,
                 "#GROUPPIC\n"
-                f"Group profile pic changed "
+                f"Foto profil grup berubah "
                 f"CHAT: {gpic.chat.title}(`{gpic.chat_id}`)",
             )
 
@@ -142,9 +142,9 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await PETERCORDevent.edit("Promoted Successfully. PETERCORD BERHASILL !")
+        await PETERCORDevent.edit("Promosi succesfull. PETERCORD BERHASILL !")
     except BadRequestError:
-        await REBELevent.edit(NO_PERM)
+        await PETERCORDevent.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -211,7 +211,7 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    PETERCORDevent = await edit_or_reply(bon, "Banning this retard")
+    PETERCORDevent = await edit_or_reply(bon, "Melarang retard ini")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -431,24 +431,23 @@ async def get_user_from_id(user, event):
     return user_obj
 
 CmdHelp("admin").add_command(
-       'setgpic', '<reply to image>', 'Changes the groups display picture'
-).add_command(
-        'promote', '<username/reply> <custom rank (optional)>',
-        'Provides admins right to a person in the chat.'
-).add_command(
-        'demote', '<username/reply>', 'Revokes the person admin permissions    in the chat.'
-).add_command(
-        'ban', '<username/reply> <reason (optional)>', 'Bans the person off your chat.'
-).add_command(
-        'unban', '<username/reply>', 'Removes the ban from the person in the chat.'
-).add_command(
-        'mute', '<username/reply> <reason (optional)>', 'Mutes the person in the chat, works on admins too.'
-).add_command(
-        'unmute', '<username/reply>', 'Removes the person from the muted list.'
-).add_command(
-        'pin', '<reply> or .pin loud', 'Pins the replied message in Group'
-).add_command(
-        'kick', '<username/reply>', 'kick the person off your chat'
-).add_command(
-        'iundlt', None, 'display last 5 deleted messages in group.'
+   'setgpic', '<reply to image>', 'Mengubah gambar tampilan grup' 
+).add_command( 
+   'promote', '<username/reply> <peringkat kustom (opsional)>', 'Memberikan hak admin kepada seseorang dalam obrolan.' 
+).add_command( 
+   'demote', '<username/reply>', 'Mencabut izin admin orang dalam obrolan.' 
+).add_command( 
+   'ban', '<username/reply> <reason (opsional)>', 'Bans orang tersebut dari chat Anda.' 
+).add_command( 
+   'unban', '<username/reply>', 'Menghapus larangan dari orang dalam obrolan.' 
+).add_command( 
+   'mute', '<username/reply> <reason (opsional)>', 'Bungkam orang dalam obrolan, juga berfungsi di admin.' 
+).add_command( 
+   'unmute', '<username/reply>', 'Menghapus orang tersebut dari daftar yang dibisukan.' 
+)add_command( 
+   'pin', '<reply> atau .pin loud', 'Pin pesan yang dibalas di Grup' 
+).add_command( 
+   'kick', '<username/reply>', 'tendang orang itu dari obrolan Anda' 
+).add_command( 
+   'iundlt', Tidak ada, 'tampilkan 5 pesan terakhir yang dihapus dalam grup.' 
 ).add()
