@@ -7,8 +7,6 @@ from asyncio.exceptions import TimeoutError
 
 @bot.on(admin_cmd(pattern="^sa$"))
 @bot.on(sudo_cmd(pattern="^sa$", allow_sudo=True))
-async def Ooo(e):
-    
 async def lastname(steal):
     if steal.fwd_from:
         return
