@@ -17,7 +17,7 @@ from userbot.cmdhelp import CmdHelp
 PM_TRUE_FALSE = Config.PM_DATA
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-REBELPIC = (
+PETERCORDPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
