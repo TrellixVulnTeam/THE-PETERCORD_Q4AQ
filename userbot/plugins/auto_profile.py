@@ -18,7 +18,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 async def _(event):
     if event.fwd_from:
         return
-    REBEL = await edit_or_reply(event, "`Starting AutoName Please Wait`")
+    PETERCORD = await edit_or_reply(event, "`Starting AutoName Please Wait`")
     if event.fwd_from:
         return
 
