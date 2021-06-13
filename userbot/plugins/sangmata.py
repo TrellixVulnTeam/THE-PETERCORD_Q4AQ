@@ -58,4 +58,6 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit Petercord Maaf`")
 
 
-
+CmdHelp("sangmata").add_command(
+  'sa', 'balas ke pengguna', 'Menemukan riwayat nama pengguna.'
+).add()
