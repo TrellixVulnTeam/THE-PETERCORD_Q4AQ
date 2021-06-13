@@ -1,6 +1,8 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import register
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply
+from userbot.cmdhelp import CmdHelp
+
 from asyncio.exceptions import TimeoutError
 
 
@@ -56,8 +58,4 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit Petercord Maaf`")
 
 
-CMD_HELP.update({
-    "sangmata":
-        "`.sa`\
-          \nUsage: Mendapatkan Riwayat Nama Pengguna."
-})
+
