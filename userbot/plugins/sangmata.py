@@ -1,6 +1,7 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP
-from userbot.events import register
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.cmdhelp import CmdHelp
+
 from asyncio.exceptions import TimeoutError
 
 
