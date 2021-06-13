@@ -1,12 +1,10 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
-
+from userbot import bot, CMD_HELP
+from userbot.events import register
 from asyncio.exceptions import TimeoutError
 
 
-@bot.on(admin_cmd(pattern="^sa$"))
-@bot.on(sudo_cmd(pattern="^sa$", allow_sudo=True))
+@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -55,3 +53,10 @@ async def lastname(steal):
             )
     except TimeoutError:
         return await steal.edit("`Saya Sedang Sakit Petercord Maaf`")
+
+
+CMD_HELP.update({
+    "sangmata":
+        "`.sa`\
+          \nUsage: Mendapatkan Riwayat Nama Pengguna."
+})
