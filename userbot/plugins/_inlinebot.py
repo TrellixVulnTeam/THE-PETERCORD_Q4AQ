@@ -120,9 +120,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
-            await event.edit(
-              "Menu close \n\n **[© PETERCORDBOT ™](t.me/TEAMSquadUserbotSupport)**")
+    buttons = [
+        (Button.inline("Open Menu", data="mainmenu"),),
+    ]
+    await event.edit("Menu Closed", buttons=buttons)
+
         else:
             PETERCORD_alert = "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™"
             await event.answer(PETERCORD_alert, cache_time=0, alert=True)
