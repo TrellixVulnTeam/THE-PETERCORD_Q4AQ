@@ -118,13 +118,21 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             link_preview=False,
         )
         
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
     async def page(event):
         if not event.query.user_id == bot.uid:
-        buttons = [
-            custom.Button.inline(("Open Menu", data="button"),),
-    ]
-    await event.edit("Menu Closed", buttons=buttons)
+            return await event.answer(
+                "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™",
+                cache_time=0,
+                alert=True,
+            )
+        page = int(event.data_match.group(1).decode("UTF-8"))
+        veriler = button(page, CMD_HELP)
+        await event.edit(
+            f"**𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n𝐑𝐄𝐏𝐎 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦**\n[𝗦𝗨𝗣𝗣𝗢𝗥𝗧](https://t.me/TEAMSquadUserbotSupport)\n𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡\n\n**𝗝𝗨𝗠𝗟𝗔𝗛 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗧𝗘𝗥𝗦𝗘𝗗𝗜𝗔 :** `{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** {page + 1}/{veriler[0]}",
+            buttons=veriler[1],
+            link_preview=False,
+        )
 
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
