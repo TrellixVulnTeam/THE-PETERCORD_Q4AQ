@@ -13,7 +13,7 @@ logging.basicConfig(
 async def yardim(event):
     try:
             return
-    tgbotusername = TG_BOT_TOKEN_BF_HER
+    tgbotusername = TG_BOT_USER_NAME_BF_HER
         if tgbotusername is not None:
             results = await event.client.inline_query(tgbotusername, "@TEAMSquadUserbotSupport")
             await results[0].click(
