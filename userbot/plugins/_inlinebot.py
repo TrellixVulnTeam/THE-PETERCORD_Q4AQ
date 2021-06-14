@@ -118,19 +118,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             link_preview=False,
         )
         
-    @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
-    async def page(event):
-        if not event.query.user_id == bot.uid:
-            return await event.answer("Menu close", buttons=buttons)
-                
-        page = int(event.data_match.group(1).decode("UTF-8"))
-        veriler = button(page, CMD_HELP)
-        await event.edit(
-            f"**𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗨𝗦𝗘𝗥𝗕𝗢𝗧\n\n┏━━━━━━━━━━━━━━━━━━━\n┗━━━━━━━━━━━━━━━━━━━ \n\n𝐑𝐄𝐏𝐎 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦**\n[𝗦𝗨𝗣𝗣𝗢𝗥𝗧](https://t.me/TEAMSquadUserbotSupport)\n𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡\n\n**𝗝𝗨𝗠𝗟𝗔𝗛 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗧𝗘𝗥𝗦𝗘𝗗𝗜𝗔 :** `{len(CMD_HELP)}`\n**𝗛𝗔𝗟𝗔𝗠𝗔𝗡:** {page + 1}/{veriler[0]}",
-            buttons=veriler[1],
-            link_preview=False,
-        )
-
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    async def on_plug_in_callback_query_handler(event):
+        if event.query.user_id == bot.uid:
+            await delete_REBEL(event,
+              "💐PETERCORDBOT Menu Provider Is now Closed💐\n\n         **[© PETERCORDBOT ™](https://t.me/TEAMSquadUserbotSupport)**", 5, link_preview=False
+            )
+        else:
+            PETERCORD_alert = "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™"
+            await event.answer(PETERCORD_alert, cache_time=0, alert=True)
+          
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
