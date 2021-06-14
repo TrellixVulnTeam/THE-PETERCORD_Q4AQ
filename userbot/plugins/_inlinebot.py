@@ -122,10 +122,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
                 await event.edit("Menu Closed", buttons=buttons)
-        else:
-            PETERCORD_alert = "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™"
-            await event.answer(PETERCORD_alert, cache_time=0, alert=True)
-          
+        
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
