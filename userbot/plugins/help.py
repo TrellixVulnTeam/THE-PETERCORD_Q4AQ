@@ -12,7 +12,8 @@ logging.basicConfig(
 @register(outgoing=True, pattern=r"^\.petercordbothelp")
 async def yardim(event):
     try:
-        tgbotusername = BOT_USERNAME
+            return
+    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
         if tgbotusername is not None:
             results = await event.client.inline_query(tgbotusername, "@TEAMSquadUserbotSupport")
             await results[0].click(
