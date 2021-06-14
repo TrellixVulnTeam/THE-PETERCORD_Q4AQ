@@ -121,11 +121,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
     async def page(event):
         if not event.query.user_id == bot.uid:
-            return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™",
-                cache_time=0,
-                alert=True,
-            )
+            return await event.answer("Menu close", buttons=buttons)
+                
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
