@@ -1,7 +1,7 @@
 import logging
 
 
-from userbot import BOT_USERNAME
+from userbot.Config import Config
 from userbot.events import register
 
 logging.basicConfig(
